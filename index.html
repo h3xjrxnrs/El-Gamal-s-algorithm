@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Шифратор Ель-Гамаля — текст</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Шифратор Ель-Гамаля </h1>
+    <p class="note">Введи текст</p>
+
+    <label>Текст для шифрування:
+      <textarea id="plainText" placeholder="Введи текст тут...">Напиши сюди текст:</textarea>
+    </label>
+
+    <div class="row">
+      <div class="col" style="flex:1">
+        <button id="analyzeBtn">Аналізувати текст та запропонувати p</button>
+      </div>
+      <div class="col" style="flex:1">
+        <button id="genAllBtn">Автогенерувати g, x, k</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <label>Просте число p:
+        <input id="p" type="text" inputmode="numeric" />
+        <small id="pHint" class="note"></small>
+      </label>
+
+      <label>Первісний корінь g (або простий вибір):
+        <input id="g" type="text" inputmode="numeric" />
+        <small id="gHint" class="note">Рекомендовано: 3 або 5 (якщо підходить).</small>
+      </label>
+
+      <label>Закритий ключ x:
+        <input id="x" type="text" inputmode="numeric" />
+        <small id="xHint" class="note"></small>
+      </label>
+
+      <label>Випадкове k:
+        <input id="k" type="text" inputmode="numeric" />
+        <small id="kHint" class="note"></small>
+      </label>
+    </div>
+
+    <div class="buttons">
+      <button id="genPubBtn">Згенерувати відкритий ключ y</button>
+      <button id="encryptBtn">Зашифрувати</button>
+      <button id="decryptBtn">Розшифрувати</button>
+      <button id="clearBtn">Очистити</button>
+    </div>
+
+    <label>Відкритий ключ (y = g^x mod p):
+      <input id="y" readonly />
+    </label>
+
+    <label>Шифротекст :
+      <textarea id="cipher" readonly></textarea>
+    </label>
+
+    <label>Розшифрований текст:
+      <textarea id="decrypted" readonly></textarea>
+    </label>
+
+    <div id="messages" class="note" aria-live="polite"></div>
+
+  </div>
+<div class="author-card">
+  <img src="/photo/avatar.jpg" alt="Author photo">
+  <p>Автор: <strong>jrxnrs</strong></p>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
